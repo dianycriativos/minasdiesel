@@ -38,56 +38,51 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     
     <style>
+        /* ========================================
+        NOVA PALETA DE CORES E ESTILO GERAL
+        ========================================
+        */
         :root {
-            --primary-color: #25D366; /* Verde WhatsApp */
-            --primary-hover-color: #1EBE57;
+            --primary-color: #E53935; /* Vermelho principal para destaque */
+            --primary-hover-color: #C62828;
+            --whatsapp-color: #25D366;
+            --whatsapp-hover-color: #1EBE57;
             --dark-color: #121212;
-            --secondary-dark-color: #212121;
+            --secondary-dark-color: #1E1E1E;
             --light-color: #FFFFFF;
             --text-color: #E0E0E0;
+            --text-light-color: #BDBDBD;
             --accent-color: #FFC107; /* Amarelo para estrelas */
-            --red-highlight: #E53935;
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--dark-color); 
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--secondary-dark-color); 
-            border-radius: 5px;
-            border: 1px solid var(--dark-color);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--red-highlight); 
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--dark-color); }
+        ::-webkit-scrollbar-thumb { background: var(--secondary-dark-color); border-radius: 5px; border: 1px solid var(--dark-color); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
 
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--dark-color);
             color: var(--text-color);
-        }
-
-        .page-wrapper {
             overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Bebas Neue', sans-serif;
             font-weight: 400;
-            color: white;
-            letter-spacing: 1px;
+            color: var(--light-color);
+            letter-spacing: 1.5px;
         }
-
+        
+        /* ========================================
+        HEADER E NAVEGAÇÃO
+        ========================================
+        */
         .navbar {
             background-color: transparent;
             transition: background-color 0.4s ease;
+            padding: 1rem 0;
         }
 
         .navbar.scrolled {
@@ -98,91 +93,175 @@
         .navbar .nav-link {
             color: white;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             transition: color 0.3s ease;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .navbar .nav-link:hover, .navbar .nav-link.active {
-            color: var(--red-highlight);
+            color: var(--primary-color);
         }
         
-        .navbar-collapse {
-            transition: none !important; /* Remove animação de abrir/fechar */
+        .navbar-toggler:focus { box-shadow: none; }
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse.show, .navbar-collapse.collapsing {
+                background-color: rgba(18, 18, 18, 0.98);
+                border-radius: 0 0 10px 10px;
+                padding: 1rem;
+            }
         }
 
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        #hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(18, 18, 18, 1)), url('fundo.webp') no-repeat center center;
-            background-size: cover;
-            min-height: 100vh; /* Alterado para ocupar a tela inteira */
-            color: white;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            user-select: none; /* Impede a seleção de texto ao arrastar */
-        }
-        
-        #hero h1 {
-            font-size: 5rem;
-            line-height: 1.1;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.9); /* Sombra mais forte para legibilidade */
-        }
-        
-        #hero .highlight {
-            color: var(--red-highlight);
-        }
-
-        #hero p {
-            font-size: 1.3rem;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.9); /* Sombra mais forte para legibilidade */
-        }
-
-        .btn-cta {
+        /* ========================================
+        BOTÕES PRINCIPAIS (CTAs)
+        ========================================
+        */
+        .btn-principal {
             background-color: var(--primary-color);
             border-color: var(--primary-color);
             color: white;
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1.6rem;
-            padding: 10px 40px;
+            padding: 12px 45px;
             transition: all 0.3s ease;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-decoration: none;
             border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
         }
 
-        .btn-cta:hover {
+        .btn-principal:hover {
             background-color: var(--primary-hover-color);
             border-color: var(--primary-hover-color);
             color: white;
             transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(229, 57, 53, 0.4);
+        }
+        
+        .btn-whatsapp {
+             background-color: var(--whatsapp-color);
+             border-color: var(--whatsapp-color);
+        }
+        .btn-whatsapp:hover {
+             background-color: var(--whatsapp-hover-color);
+             border-color: var(--whatsapp-hover-color);
         }
 
+        /* ========================================
+        SEÇÃO HERO (PRINCIPAL)
+        ========================================
+        */
+        #hero {
+            background: linear-gradient(131deg, rgba(0, 0, 0, 0.9) 0%, rgba(8, 7, 7, 0.85) 47%, rgba(212, 7, 0, 0.65) 80%), url('fundo.webp') no-repeat center center;
+            background-size: cover;
+            min-height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-top: 80px; 
+        }
+        
+        #hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            text-shadow: 0px 2px 5px rgba(0,0,0,0.5), 0px 5px 15px rgba(0,0,0,0.7);
+        }
+        
+        #hero .highlight {
+            color: var(--primary-color);
+        }
+
+        #hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+            color: var(--text-color);
+        }
+
+        .hero-logo {
+            max-width: 80%;
+            height: auto;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
+        }
+
+        /* ========================================
+        ESTRUTURA DAS SEÇÕES
+        ========================================
+        */
         .section {
-            padding: 80px 0;
+            padding: 100px 0;
+            position: relative;
         }
         
         .section-title {
-            font-size: 4rem;
-            margin-bottom: 3rem;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
             text-align: center;
         }
         
         .section-title .highlight {
-            color: var(--red-highlight);
+            color: var(--primary-color);
+        }
+
+        /* ========================================
+        NOVA SEÇÃO: POR QUE ESCOLHER-NOS
+        ========================================
+        */
+        .feature-card {
+            background-color: var(--secondary-dark-color);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .feature-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        .feature-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card p {
+            color: var(--text-light-color);
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+        SEÇÃO SERVIÇOS
+        ========================================
+        */
+        #servicos {
+            position: relative;
+            background-color: transparent;
+            z-index: 1;
+            padding-top: 150px;
+        }
+        #servicos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(18, 18, 18, 0.92), rgba(18, 18, 18, 0.92)), url('chaves.avif') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
         }
 
         .service-card {
             background-color: var(--secondary-dark-color);
             border: 1px solid #333;
-            border-radius: 8px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 25px;
             text-align: center;
             transition: all 0.3s ease;
             height: 100%;
@@ -192,33 +271,32 @@
 
         .service-card:hover {
             transform: translateY(-8px);
-            border-color: var(--red-highlight);
+            border-color: var(--primary-color);
         }
         
         .service-card img {
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            aspect-ratio: 3 / 2;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            aspect-ratio: 16 / 10;
             object-fit: cover;
         }
         
         .service-card h3 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
         }
 
         .service-card p {
             flex-grow: 1;
-            color: #ccc;
-            font-size: 0.95rem;
+            color: var(--text-light-color);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .service-card .btn-cta {
-            font-size: 1.3rem;
-            padding: 8px 25px;
-        }
-
+        /* ========================================
+        SEÇÃO MARCAS
+        ========================================
+        */
         #marcas {
-            background-color: var(--secondary-dark-color);
             padding: 60px 0;
         }
 
@@ -226,79 +304,171 @@
             max-height: 60px;
             width: auto;
             margin: 0 auto;
+            filter: grayscale(100%) contrast(0.5) brightness(1.5); /* Logos em escala de cinza */
             transition: all 0.3s ease;
         }
 
         #marcas .swiper-slide:hover img {
+            filter: none; /* Cor original no hover */
             transform: scale(1.1);
         }
         
+        /* ========================================
+        SEÇÃO AVALIAÇÕES (TOTALMENTE REFEITA)
+        ========================================
+        */
         #avaliacoes {
-            background-color: var(--dark-color);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+        #avaliacoes .section-title, #avaliacoes .section-title .highlight {
+            color: var(--dark-color);
+        }
+        .section-subtitle-stars {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+        .section-subtitle-stars .stars {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+        .section-subtitle-stars .google-logo {
+            height: 30px;
         }
         
         .review-card {
-            background: var(--secondary-dark-color);
-            padding: 2rem;
+            background: #f7f8fa;
+            padding: 1.5rem;
             border-radius: 15px;
-            border: 1px solid #333;
             height: 100%;
             display: flex;
             flex-direction: column;
-            color: var(--text-color);
+            color: #333;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: none;
         }
-        
-        .review-card .name {
-            font-family: 'Roboto', sans-serif;
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .review-card .client-name {
             font-weight: bold;
-            color: white;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+            margin: 0;
         }
-        
+        .review-card .review-time {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .review-card .google-logo-card {
+            height: 24px;
+        }
         .review-card .stars {
             color: var(--accent-color);
+            margin-bottom: 1rem;
         }
-
         .review-card .review-text {
             font-style: italic;
             flex-grow: 1;
+            color: #555;
+            font-size: 1rem;
         }
         
-        .swiper-button-next, .swiper-button-prev {
-            color: var(--red-highlight);
+        .swiper-button-next, .swiper-button-prev { color: var(--primary-color); }
+        .swiper-pagination-bullet-active { background: var(--primary-color); }
+
+        /* ========================================
+        NOVA SEÇÃO: CTA FINAL
+        ========================================
+        */
+        #cta-final {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1623018283020-2a315b3d3a2a?q=80&w=1974&auto=format&fit=crop') center center/cover;
+            padding: 80px 0;
+            text-align: center;
         }
-        .swiper-pagination-bullet-active {
-            background: var(--red-highlight);
+        #cta-final h2 {
+            font-size: 3.5rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+        }
+        #cta-final p {
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            font-size: 1.1rem;
+            color: var(--text-light-color);
         }
 
+        /* ========================================
+        RODAPÉ
+        ========================================
+        */
         footer {
-            background-color: #000;
+            background-color: #0c0c0c;
             color: #777;
-            padding: 60px 0 20px;
+            padding: 80px 0;
         }
-
+        .footer-content {
+            background-color: #1a1a1a;
+            border-radius: 15px;
+            padding: 2.5rem;
+        }
         footer a {
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
-        footer a:hover {
-            color: var(--red-highlight);
-        }
-        
-        footer .footer-title {
-            font-size: 1.8rem;
+        footer a:hover { color: var(--primary-color); }
+        .footer-title {
+            font-size: 2.5rem;
             color: white;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .horarios-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 1.1rem;
+        }
+        .horarios-list li span:last-child {
+            color: var(--light-color);
+            font-weight: 500;
+        }
+        .horarios-list li .dia-semana {
+            color: var(--text-light-color);
+        }
+        .horarios-list .fechado {
+            color: var(--primary-color) !important;
+        }
+        .contact-info-footer {
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+        .contact-info-footer i {
+            color: var(--primary-color);
+        }
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            margin-top: 2.5rem;
         }
 
+        /* ========================================
+        BOTÃO FLUTUANTE WHATSAPP
+        ========================================
+        */
         .whatsapp-float {
             position: fixed;
             width: 60px;
             height: 60px;
             bottom: 30px;
             right: 30px;
-            background-color: var(--primary-color);
+            background-color: var(--whatsapp-color);
             color: #FFF;
             border-radius: 50px;
             text-align: center;
@@ -308,72 +478,98 @@
             transition: all 0.3s ease;
             text-decoration: none;
         }
-
         .whatsapp-float:hover {
             transform: scale(1.1);
+            background-color: var(--whatsapp-hover-color);
         }
         
-        @media (min-width: 1200px) {
-            .container {
-                max-width: 1320px; /* Reduz as margens em telas grandes */
-            }
+        /* ========================================
+        FAIXA DE TEXTO EM MOVIMENTO
+        ========================================
+        */
+        .moving-text-banner-wrapper {
+            transform: rotate(-2deg);
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -60px; /* Ajuste para sobrepor */
+            z-index: 10;
+        }
+        .moving-text-banner {
+            background-color: var(--light-color);
+            padding: 0.5rem 0;
+            white-space: nowrap;
+            color: var(--dark-color);
+            text-align: center;
+        }
+        .moving-text-banner .moving-text-content {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            display: inline-block;
+            padding: 0 2rem; /* Adiciona margem interna */
+        }
+        .moving-text-banner .moving-text-content span {
+            color: var(--primary-color);
+            margin: 0 1.5rem;
         }
 
+        /* ========================================
+        AJUSTES RESPONSIVOS
+        ========================================
+        */
+
         @media (max-width: 991.98px) {
-            #hero h1 {
-                font-size: 4rem;
+            #hero { 
+                background: linear-gradient(131deg, rgba(0, 0, 0, 0.9) 0%, rgba(8, 7, 7, 0.85) 47%, rgba(212, 7, 0, 0.65) 80%), url('fundoM.avif') no-repeat center center;
+                background-size: cover;
+                padding-top: 60px; 
             }
-            .navbar-collapse.show, .navbar-collapse.collapsing {
-                background-color: rgba(18, 18, 18, 0.98); /* Fundo sólido para legibilidade */
-                border-radius: 0 0 10px 10px;
-                padding: 1rem;
+            #hero h1 { font-size: 4.5rem; text-align: center; }
+            #hero p { text-align: center; margin-left: auto; margin-right: auto;}
+            #hero .btn-principal { margin: 0 auto; display: table; }
+            .section-title { font-size: 3.5rem; }
+            .footer-content { padding: 1.5rem; }
+            #servicos::before {
+                background: linear-gradient(rgba(18, 18, 18, 0.92), rgba(18, 18, 18, 0.92)), url('chavesM.avif') no-repeat center center;
+                background-size: cover;
             }
         }
         
         @media (max-width: 767.98px) {
-            #hero h1 {
-                font-size: calc(2.2rem + 4vw); /* Fonte responsiva para melhor ajuste */
-                line-height: 1.2;
+            .section { padding: 80px 0; }
+            #hero h1 { font-size: calc(2.5rem + 5vw); line-height: 1.2; }
+            #hero p { font-size: 1.2rem; }
+            .section-title { font-size: 3rem; }
+            .moving-text-banner .moving-text-content {
+                font-size: 1.2rem; /* Diminui o texto no mobile */
             }
-            #hero p {
-                font-size: 1.1rem;
-            }
-            .section-title {
-                font-size: 2.8rem;
-            }
-            footer {
-                padding-top: 40px;
-                text-align: center;
-            }
-            footer .g-5 {
-                --bs-gutter-y: 2.5rem;
-            }
-            footer .text-md-start {
-                text-align: center !important;
+            .moving-text-banner-wrapper {
+                top: -40px;
             }
         }
     </style>
 </head>
 <body>
-<div class="page-wrapper">
+
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#hero">
                 <img src="logo.avif" alt="Auto Mecânica Minas Diesel Logo" style="height: 50px; width: auto; margin-right: 10px;" loading="eager">
-                <span class="h4 mb-0 text-white">Minas Diesel</span>
+                <span class="h4 mb-0 text-white" style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem;">Minas Diesel</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#porque-nos">Diferenciais</a></li>
                     <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#marcas">Marcas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#avaliacoes">Avaliações</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
                     <li class="nav-item ms-lg-3 d-none d-lg-block">
-                        <a href="https://wa.me/5566996913995?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="btn btn-cta" style="font-size: 1.2rem; padding: 5px 20px;">
+                        <a href="https://wa.me/5566996913995?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="btn btn-principal btn-whatsapp" style="font-size: 1.2rem; padding: 8px 25px;">
                             <i class="fab fa-whatsapp"></i> Orçamento
                         </a>
                     </li>
@@ -385,21 +581,69 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
                     <h1>SEU PESADO NÃO PODE PARAR.<br>A <span class="highlight">SOLUÇÃO</span> ESTÁ AQUI.</h1>
                     <p class="lead my-4">Mecânica diesel de alta performance para caminhões e máquinas agrícolas. Atendimento especializado na BR-163, em Nova Santa Helena.</p>
-                    <a href="https://wa.me/5566996913995?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="btn btn-cta btn-lg">
-                        <i class="fab fa-whatsapp me-2"></i> ORÇAMENTO RÁPIDO
+                    <a href="#contato" class="btn btn-principal btn-lg">
+                        <i class="fas fa-wrench me-2"></i> AGENDAR SERVIÇO
                     </a>
+                </div>
+                <div class="col-lg-6 d-none d-lg-flex justify-content-center">
+                    <img src="logo.avif" alt="Logo Minas Diesel em destaque" class="hero-logo">
                 </div>
             </div>
         </div>
     </section>
 
     <main>
+        <!-- NOVA SEÇÃO: Por que escolher a Minas Diesel? -->
+        <section id="porque-nos" class="section">
+            <div class="container">
+                <h2 class="section-title">Nossos <span class="highlight">Diferenciais</span></h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card">
+                            <div class="icon"><i class="fas fa-award"></i></div>
+                            <h3>Experiência Comprovada</h3>
+                            <p>Anos de dedicação e especialização em linha pesada, garantindo um serviço de qualidade inquestionável e confiança.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card">
+                            <div class="icon"><i class="fas fa-microchip"></i></div>
+                            <h3>Tecnologia de Ponta</h3>
+                            <p>Oficina equipada com as mais modernas ferramentas de diagnóstico e reparo, garantindo precisão em cada serviço.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card">
+                            <div class="icon"><i class="fas fa-users-cog"></i></div>
+                            <h3>Profissionais Qualificados</h3>
+                            <p>Nossa equipe é formada por técnicos especializados e apaixonados pelo que fazem, sempre atualizados com as últimas tendências.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card">
+                            <div class="icon"><i class="fas fa-handshake"></i></div>
+                            <h3>Atendimento Personalizado</h3>
+                            <p>Aqui, cada cliente é único. Oferecemos um atendimento transparente e focado em atender suas necessidades específicas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Serviços Section -->
-        <section id="servicos" class="section bg-dark">
+        <section id="servicos" class="section">
+             <!-- Faixa de Texto em Movimento -->
+            <div class="moving-text-banner-wrapper">
+                <div class="moving-text-banner">
+                    <div class="moving-text-content">
+                        A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span>
+                    </div>
+                </div>
+            </div>
             <div class="container">
                 <h2 class="section-title">NOSSOS <span class="highlight">SERVIÇOS</span></h2>
                 <div class="row g-4 justify-content-center">
@@ -407,24 +651,24 @@
                         <div class="service-card">
                             <img src="motor.avif" class="img-fluid" alt="Serviço de Motor" width="600" height="400" loading="lazy">
                             <h3>Motor</h3>
-                            <p>Diagnóstico completo, retífica e reparo de motores diesel. Garantimos a potência e a durabilidade que seu veículo precisa para rodar tranquilo.</p>
-                            <a href="https://wa.me/5566996913995?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Motor." target="_blank" class="btn btn-cta mt-3"><i class="fab fa-whatsapp me-2"></i>Pedir Orçamento</a>
+                            <p>Diagnóstico completo, retífica e reparo de motores diesel. Garantimos a potência e a durabilidade que seu veículo precisa.</p>
+                            <a href="https://wa.me/5566996913995?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Motor." target="_blank" class="btn btn-principal btn-whatsapp mt-3" style="font-size: 1.3rem; padding: 8px 25px;"><i class="fab fa-whatsapp me-2"></i>Orçamento</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="service-card">
                             <img src="cambio.avif" class="img-fluid" alt="Serviço de Câmbio" width="600" height="400" loading="lazy">
                             <h3>Câmbio</h3>
-                            <p>Especialistas em manutenção e conserto de caixas de câmbio manuais e automatizadas. Serviço preciso para uma troca de marchas suave e segura.</p>
-                             <a href="https://wa.me/5566996913995?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Câmbio." target="_blank" class="btn btn-cta mt-3"><i class="fab fa-whatsapp me-2"></i>Pedir Orçamento</a>
+                            <p>Especialistas em manutenção e conserto de caixas de câmbio manuais e automatizadas para uma troca de marchas suave e segura.</p>
+                             <a href="https://wa.me/5566996913995?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Câmbio." target="_blank" class="btn btn-principal btn-whatsapp mt-3" style="font-size: 1.3rem; padding: 8px 25px;"><i class="fab fa-whatsapp me-2"></i>Orçamento</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="service-card">
                             <img src="diferencial.avif" class="img-fluid" alt="Serviço de Diferencial" width="600" height="400" loading="lazy">
                             <h3>Diferencial</h3>
-                            <p>Revisão e reparo de diferenciais para linha pesada e agrícola. Asseguramos a tração e a estabilidade do seu veículo em qualquer terreno.</p>
-                             <a href="https://wa.me/5566996913995?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Diferencial." target="_blank" class="btn btn-cta mt-3"><i class="fab fa-whatsapp me-2"></i>Pedir Orçamento</a>
+                            <p>Revisão e reparo de diferenciais para linha pesada e agrícola. Asseguramos a tração e a estabilidade do seu veículo.</p>
+                             <a href="https://wa.me/5566996913995?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Diferencial." target="_blank" class="btn btn-principal btn-whatsapp mt-3" style="font-size: 1.3rem; padding: 8px 25px;"><i class="fab fa-whatsapp me-2"></i>Orçamento</a>
                         </div>
                     </div>
                 </div>
@@ -451,40 +695,77 @@
         <!-- Avaliações Section -->
         <section id="avaliacoes" class="section">
             <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="section-title">Avaliações <span class="highlight">Reais</span> de Clientes!</h2>
-                    <a href="https://g.co/kgs/ReYAVzE" target="_blank" class="btn btn-outline-light">
-                        Ver todas no Google <i class="fab fa-google ms-2"></i>
-                    </a>
+                <h2 class="section-title">AVALIAÇÕES DE NOSSOS <span class="highlight">CLIENTES</span></h2>
+                <div class="section-subtitle-stars">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Logo do Google" class="google-logo">
                 </div>
                 
                 <div class="swiper reviewsSwiper">
                     <div class="swiper-wrapper pb-5">
+                        <!-- Card de Avaliação 1 -->
                         <div class="swiper-slide h-auto">
                             <div class="review-card">
-                                <p class="name mb-1">Gean Aparecido</p>
-                                <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <div class="review-header">
+                                    <div>
+                                        <p class="client-name">Gean Aparecido</p>
+                                        <p class="review-time">2 semanas atrás</p>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Logo do Google" class="google-logo-card">
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
                                 <p class="review-text">"Bom de mas. Mecânicos de qualidade"</p>
                             </div>
                         </div>
+                        <!-- Card de Avaliação 2 -->
                         <div class="swiper-slide h-auto">
                             <div class="review-card">
-                                <p class="name mb-1">allyson rodrigo deo</p>
-                                <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <div class="review-header">
+                                    <div>
+                                        <p class="client-name">allyson rodrigo deo</p>
+                                        <p class="review-time">1 mês atrás</p>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Logo do Google" class="google-logo-card">
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
                                 <p class="review-text">"Ficamos felizes em saber que você ficou satisfeito com nosso atendimento. Sempre que precisar, a equipe da Minas Disel estará à disposição."</p>
                             </div>
                         </div>
+                        <!-- Card de Avaliação 3 -->
                         <div class="swiper-slide h-auto">
                            <div class="review-card">
-                                <p class="name mb-1">Deusalino Pereira da silva</p>
-                                <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <div class="review-header">
+                                    <div>
+                                        <p class="client-name">Deusalino Pereira da silva</p>
+                                        <p class="review-time">3 semanas atrás</p>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Logo do Google" class="google-logo-card">
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
                                 <p class="review-text">"Sua confiança nos motiva a seguir com dedicação e qualidade nos serviços. A equipe da Minas Disel está sempre à disposição!"</p>
                             </div>
                         </div>
+                        <!-- Card de Avaliação 4 -->
                          <div class="swiper-slide h-auto">
                            <div class="review-card">
-                                <p class="name mb-1">mauro Mauro</p>
-                                <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <div class="review-header">
+                                    <div>
+                                        <p class="client-name">mauro Mauro</p>
+                                        <p class="review-time">1 semana atrás</p>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Logo do Google" class="google-logo-card">
+                                </div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
                                 <p class="review-text">"Sua confiança é muito importante para nós. Sempre que precisar, a equipe da Minas Disel estará pronta para te atender com qualidade e responsabilidade!"</p>
                             </div>
                         </div>
@@ -493,45 +774,44 @@
                 </div>
             </div>
         </section>
+        
+        <!-- NOVA SEÇÃO: CTA Final -->
+        <section id="cta-final">
+            <div class="container">
+                <h2>Não espere o problema aparecer.</h2>
+                <p>A prevenção é o melhor caminho para a longevidade do seu veículo. Agende sua visita à Minas Diesel e descubra por que somos a referência em serviços automotivos na região.</p>
+                <a href="https://wa.me/5566996913995?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20serviço." target="_blank" class="btn btn-principal btn-lg btn-whatsapp">
+                    <i class="fab fa-whatsapp me-2"></i> AGENDAR PELO WHATSAPP
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <footer id="contato">
         <div class="container">
-            <div class="row g-5 text-center text-md-start">
-                <div class="col-lg-5 col-md-12">
-                    <img src="logo.avif" alt="Logo" class="mb-3" style="height: 73px; width: auto;" loading="lazy">
-                    <p>Auto Mecânica Minas Diesel<br>CNPJ: 15.058.294/0001-80</p>
-                    <p>A sua parada obrigatória na BR-163 para serviços de mecânica diesel com agilidade e confiança.</p>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="footer-title">Contato</h4>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fab fa-whatsapp fa-fw me-2"></i> <a href="https://wa.me/5566996913995" target="_blank">(66) 99691-3995</a></li>
-                        <li class="mb-2"><i class="fas fa-envelope fa-fw me-2"></i> <a href="mailto:deusalinopereiradasilva567@gmail.com">deusalinopereiradasilva567@gmail.com</a></li>
-                        <li class="mb-2"><i class="fab fa-instagram fa-fw me-2"></i> <a href="https://www.instagram.com/minasdieselautomecanica" target="_blank">@minasdieselautomecanica</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="footer-title">Endereço</h4>
-                    <p>
-                        <a href="https://g.co/kgs/ReYAVzE" target="_blank">
-                            BR-163, 425<br>
-                            Nova Santa Helena - MT<br>
-                            78548-000
-                        </a>
-                    </p>
+            <div class="footer-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="footer-title">Horários e Contato</h2>
+                        <ul class="list-unstyled horarios-list">
+                            <li><span class="dia-semana">Segunda a Sábado:</span> <span>07:11 – 13:17</span></li>
+                            <li><span class="dia-semana">Domingo:</span> <span class="fechado">Fechado</span></li>
+                        </ul>
+                        <div class="contact-info-footer">
+                            <p class="mb-2"><a href="https://wa.me/5566996913995" target="_blank"><i class="fab fa-whatsapp fa-fw me-2"></i> (66) 99691-3995</a></p>
+                            <p class="mb-0"><a href="https://g.co/kgs/ReYAVzE" target="_blank"><i class="fas fa-map-marker-alt fa-fw me-2"></i> BR-163, 425 - Nova Santa Helena, MT</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.448643790943!2d-55.192512925786325!3d-10.853441120829968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9307956cff3098c5%3A0x217152812beea283!2sAuto%20Mec%C3%A2nica%20Minas%20Diesel-%20Nova%20Santa%20Helena-MT!5e0!3m2!1spt-BR!2sbr!4v1753396589297!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
-             <div class="row mt-4">
-                <div class="col-12">
-                     <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.448643790943!2d-55.192512925786325!3d-10.853441120829968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9307956cff3098c5%3A0x217152812beea283!2sAuto%20Mec%C3%A2nica%20Minas%20Diesel-%20Nova%20Santa%20Helena-MT!5e0!3m2!1spt-BR!2sbr!4v1753396589297!5m2!1spt-BR!2sbr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                     </div>
-                </div>
-            </div>
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="text-center">
+            <div class="text-center mt-4">
                 <p class="mb-0 small">&copy; <span id="current-year"></span> Auto Mecânica Minas Diesel. Todos os direitos reservados.</p>
             </div>
         </div>
@@ -541,7 +821,7 @@
     <a href="https://wa.me/5566996913995?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20orçamento." class="whatsapp-float d-flex align-items-center justify-content-center" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-</div>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -584,7 +864,7 @@
                     spaceBetween: 30,
                     loop: true,
                     autoplay: {
-                        delay: 4000,
+                        delay: 5000,
                         disableOnInteraction: false,
                     },
                     pagination: {
@@ -599,7 +879,7 @@
 
                 var brandsSwiper = new Swiper(".brandsSwiper", {
                     slidesPerView: 2,
-                    spaceBetween: 15, /* Diminuído o espaçamento */
+                    spaceBetween: 30,
                     loop: true,
                     autoplay: {
                         delay: 2500,
