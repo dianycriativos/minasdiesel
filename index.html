@@ -487,13 +487,16 @@
         FAIXA DE TEXTO EM MOVIMENTO
         ========================================
         */
+        .banner-container {
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -60px;
+            z-index: 10;
+        }
         .moving-text-banner-wrapper {
             transform: rotate(-2deg);
-            position: absolute;
-            left: -5%; /* Adiciona margem para não cortar */
-            right: -5%; /* Adiciona margem para não cortar */
-            top: -60px; /* Ajuste para sobrepor */
-            z-index: 10;
         }
         .moving-text-banner {
             background-color: var(--light-color);
@@ -507,6 +510,7 @@
             font-size: 1.8rem;
             letter-spacing: 2px;
             display: inline-block;
+            padding: 0 2rem; /* Adiciona margem interna */
         }
         .moving-text-banner .moving-text-content span {
             color: var(--primary-color);
@@ -543,7 +547,7 @@
             .moving-text-banner .moving-text-content {
                 font-size: 1.2rem; /* Diminui o texto no mobile */
             }
-            .moving-text-banner-wrapper {
+            .banner-container {
                 top: -40px;
             }
         }
@@ -636,10 +640,12 @@
         <!-- Serviços Section -->
         <section id="servicos" class="section">
              <!-- Faixa de Texto em Movimento -->
-            <div class="moving-text-banner-wrapper">
-                <div class="moving-text-banner">
-                    <div class="moving-text-content">
-                        A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span>
+            <div class="banner-container">
+                <div class="moving-text-banner-wrapper">
+                    <div class="moving-text-banner">
+                        <div class="moving-text-content">
+                            A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span>
+                        </div>
                     </div>
                 </div>
             </div>
