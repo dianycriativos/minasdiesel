@@ -4,32 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Meta Tags -->
     <title>Auto Mecânica Minas Diesel - Especialista em Linha Pesada e Agrícola</title>
     <meta name="description" content="Serviço rápido e especializado em motor, câmbio e diferencial para caminhões e máquinas agrícolas em Nova Santa Helena - MT. Confiança e qualidade na BR-163.">
     <meta name="keywords" content="mecanica diesel, linha pesada, linha agrícola, motor, câmbio, diferencial, Nova Santa Helena, MT, oficina mecânica, Auto Mecânica Minas Diesel, conserto de caminhão, manutenção agrícola">
     <meta name="author" content="Auto Mecânica Minas Diesel">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://SEU-DOMINIO.com.br"> <!-- Substituir pela URL final -->
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://SEU-DOMINIO.com.br"> <meta property="og:type" content="website">
     <meta property="og:url" content="https://SEU-DOMINIO.com.br">
     <meta property="og:title" content="Auto Mecânica Minas Diesel - Especialista em Linha Pesada e Agrícola">
     <meta property="og:description" content="Serviço rápido e especializado em motor, câmbio e diferencial para caminhões e máquinas agrícolas.">
     <meta property="og:image" content="logo.avif">
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://SEU-DOMINIO.com.br">
     <meta property="twitter:title" content="Auto Mecânica Minas Diesel - Especialista em Linha Pesada e Agrícola">
     <meta property="twitter:description" content="Serviço rápido e especializado em motor, câmbio e diferencial para caminhões e máquinas agrícolas.">
     <meta property="twitter:image" content="logo.avif">
 
-    <!-- Favicon -->
     <link rel="icon" href="logo.avif" type="image/avif">
 
-    <!-- Dependências -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -488,7 +481,6 @@
         ========================================
         */
         .banner-container {
-            overflow: hidden;
             position: absolute;
             left: 0;
             right: 0;
@@ -504,6 +496,7 @@
             white-space: nowrap;
             color: var(--dark-color);
             text-align: center;
+            overflow: hidden;
         }
         .moving-text-banner .moving-text-content {
             font-family: 'Bebas Neue', sans-serif;
@@ -544,18 +537,20 @@
             #hero h1 { font-size: calc(2.5rem + 5vw); line-height: 1.2; }
             #hero p { font-size: 1.2rem; }
             .section-title { font-size: 3rem; }
-            .moving-text-banner .moving-text-content {
-                font-size: 1.2rem; /* Diminui o texto no mobile */
-            }
             .banner-container {
                 top: -40px;
+            }
+            .moving-text-banner-wrapper {
+                transform: rotate(0deg); /* Remove a inclinação no mobile */
+            }
+            .moving-text-banner .moving-text-content {
+                font-size: 1.2rem; /* Diminui o texto no mobile */
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#hero">
@@ -581,7 +576,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="hero">
         <div class="container">
             <div class="row align-items-center">
@@ -600,7 +594,6 @@
     </section>
 
     <main>
-        <!-- NOVA SEÇÃO: Por que escolher a Minas Diesel? -->
         <section id="porque-nos" class="section">
             <div class="container">
                 <h2 class="section-title">Nossos <span class="highlight">Diferenciais</span></h2>
@@ -637,9 +630,7 @@
             </div>
         </section>
 
-        <!-- Serviços Section -->
         <section id="servicos" class="section">
-             <!-- Faixa de Texto em Movimento -->
             <div class="banner-container">
                 <div class="moving-text-banner-wrapper">
                     <div class="moving-text-banner">
@@ -680,7 +671,6 @@
             </div>
         </section>
 
-        <!-- Marcas Section -->
         <section id="marcas" class="section">
             <div class="container">
                 <h2 class="section-title">Marcas que <span class="highlight">Trabalhamos</span></h2>
@@ -697,7 +687,6 @@
             </div>
         </section>
 
-        <!-- Avaliações Section -->
         <section id="avaliacoes" class="section">
             <div class="container">
                 <h2 class="section-title">AVALIAÇÕES DE NOSSOS <span class="highlight">CLIENTES</span></h2>
@@ -710,7 +699,6 @@
                 
                 <div class="swiper reviewsSwiper">
                     <div class="swiper-wrapper pb-5">
-                        <!-- Card de Avaliação 1 -->
                         <div class="swiper-slide h-auto">
                             <div class="review-card">
                                 <div class="review-header">
@@ -726,7 +714,6 @@
                                 <p class="review-text">"Bom de mas. Mecânicos de qualidade"</p>
                             </div>
                         </div>
-                        <!-- Card de Avaliação 2 -->
                         <div class="swiper-slide h-auto">
                             <div class="review-card">
                                 <div class="review-header">
@@ -742,7 +729,6 @@
                                 <p class="review-text">"Ficamos felizes em saber que você ficou satisfeito com nosso atendimento. Sempre que precisar, a equipe da Minas Disel estará à disposição."</p>
                             </div>
                         </div>
-                        <!-- Card de Avaliação 3 -->
                         <div class="swiper-slide h-auto">
                            <div class="review-card">
                                 <div class="review-header">
@@ -758,8 +744,7 @@
                                 <p class="review-text">"Sua confiança nos motiva a seguir com dedicação e qualidade nos serviços. A equipe da Minas Disel está sempre à disposição!"</p>
                             </div>
                         </div>
-                        <!-- Card de Avaliação 4 -->
-                         <div class="swiper-slide h-auto">
+                        <div class="swiper-slide h-auto">
                            <div class="review-card">
                                 <div class="review-header">
                                     <div>
@@ -780,7 +765,6 @@
             </div>
         </section>
         
-        <!-- NOVA SEÇÃO: CTA Final -->
         <section id="cta-final">
             <div class="container">
                 <h2>Não espere o problema aparecer.</h2>
@@ -793,7 +777,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer id="contato">
         <div class="container">
             <div class="footer-content">
@@ -806,6 +789,8 @@
                         </ul>
                         <div class="contact-info-footer">
                             <p class="mb-2"><a href="https://wa.me/5566996913995" target="_blank"><i class="fab fa-whatsapp fa-fw me-2"></i> (66) 99691-3995</a></p>
+                            <p class="mb-2"><a href="mailto:deusalinopereiradasilva567@gmail.com"><i class="fas fa-envelope fa-fw me-2"></i> deusalinopereiradasilva567@gmail.com</a></p>
+                            <p class="mb-2"><a href="https://www.instagram.com/minasdieselautomecanica" target="_blank"><i class="fab fa-instagram fa-fw me-2"></i> @minasdieselautomecanica</a></p>
                             <p class="mb-0"><a href="https://g.co/kgs/ReYAVzE" target="_blank"><i class="fas fa-map-marker-alt fa-fw me-2"></i> BR-163, 425 - Nova Santa Helena, MT</a></p>
                         </div>
                     </div>
@@ -817,17 +802,15 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <p class="mb-0 small">&copy; <span id="current-year"></span> Auto Mecânica Minas Diesel. Todos os direitos reservados.</p>
+                <p class="mb-0 small">© <span id="current-year"></span> Auto Mecânica Minas Diesel. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float Button -->
     <a href="https://wa.me/5566996913995?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20orçamento." class="whatsapp-float d-flex align-items-center justify-content-center" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
