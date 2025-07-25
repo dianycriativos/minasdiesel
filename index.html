@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Auto Mecânica Minas Diesel - Especialista em Linha Pesada e Agrícola</title>
+    <meta name="description" content="Serviço rápido e especializado em motor, câmbio e diferencial para caminhões e máquinas agrícolas em Nova Santa Helena - MT. Confiança e qualidade na BR-163.">
+    <meta name="keywords" content="mecanica diesel, linha pesada, linha agrícola, motor, câmbio, diferencial, Nova Santa Helena, MT, oficina mecânica, Auto Mecânica Minas Diesel, conserto de caminhão, manutenção agrícola">
+    <meta name="author" content="Auto Mecânica Minas Diesel">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://SEU-DOMINIO.com.br"> <!-- Substituir pela URL final -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://SEU-DOMINIO.com.br">
+    <meta property="og:title" content="Auto Mecânica Minas Diesel - Especialista em Linha Pesada e Agrícola">
+    <meta property="og:description" content="Serviço rápido e especializado em motor, câmbio e diferencial para caminhões e máquinas agrícolas.">
+    <meta property="og:image" content="logo.avif">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://SEU-DOMINIO.com.br">
+    <meta property="twitter:title" content="Auto Mecânica Minas Diesel - Especialista em Linha Pesada e Agrícola">
+    <meta property="twitter:description" content="Serviço rápido e especializado em motor, câmbio e diferencial para caminhões e máquinas agrícolas.">
+    <meta property="twitter:image" content="logo.avif">
+
+    <!-- Favicon -->
+    <link rel="icon" href="logo.avif" type="image/avif">
+
+    <!-- Dependências -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <style>
+        :root {
+            --primary-color: #25D366; /* Verde WhatsApp */
+            --primary-hover-color: #1EBE57;
+            --dark-color: #121212;
+            --secondary-dark-color: #212121;
+            --light-color: #FFFFFF;
+            --text-color: #E0E0E0;
+            --accent-color: #FFC107; /* Amarelo para estrelas */
+            --red-highlight: #E53935;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-color); 
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-dark-color); 
+            border-radius: 5px;
+            border: 1px solid var(--dark-color);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--red-highlight); 
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 400;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .navbar {
+            background-color: transparent;
+            transition: background-color 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(18, 18, 18, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar .nav-link {
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .navbar .nav-link:hover, .navbar .nav-link.active {
+            color: var(--red-highlight);
+        }
+        
+        .navbar-collapse {
+            transition: none !important; /* Remove animação de abrir/fechar */
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(18, 18, 18, 1)), url('fundo.webp') no-repeat center center;
+            background-size: cover;
+            min-height: 100vh; /* Alterado para ocupar a tela inteira */
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            user-select: none; /* Impede a seleção de texto ao arrastar */
+        }
+        
+        #hero h1 {
+            font-size: 5rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.9); /* Sombra mais forte para legibilidade */
+        }
+        
+        #hero .highlight {
+            color: var(--red-highlight);
+        }
+
+        #hero p {
+            font-size: 1.3rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.9); /* Sombra mais forte para legibilidade */
+        }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            padding: 10px 40px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-hover-color);
+            border-color: var(--primary-hover-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 4rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title .highlight {
+            color: var(--red-highlight);
+        }
+
+        .service-card {
+            background-color: var(--secondary-dark-color);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--red-highlight);
+        }
+        
+        .service-card img {
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+        }
+        
+        .service-card h3 {
+            font-size: 2.2rem;
+        }
+
+        .service-card p {
+            flex-grow: 1;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        .service-card .btn-cta {
+            font-size: 1.3rem;
+            padding: 8px 25px;
+        }
+
+        #marcas {
+            background-color: var(--secondary-dark-color);
+            padding: 60px 0;
+        }
+
+        #marcas .swiper-slide img {
+            max-height: 60px;
+            width: auto;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        #marcas .swiper-slide:hover img {
+            transform: scale(1.1);
+        }
+        
+        #avaliacoes {
+            background-color: var(--dark-color);
+        }
+        
+        .review-card {
+            background: var(--secondary-dark-color);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #333;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color);
+        }
+        
+        .review-card .name {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .review-card .stars {
+            color: var(--accent-color);
+        }
+
+        .review-card .review-text {
+            font-style: italic;
+            flex-grow: 1;
+        }
+        
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--red-highlight);
+        }
+        .swiper-pagination-bullet-active {
+            background: var(--red-highlight);
+        }
+
+        footer {
+            background-color: #000;
+            color: #777;
+            padding: 60px 0 20px;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--red-highlight);
+        }
+        
+        footer .footer-title {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+            z-index: 100;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1320px; /* Reduz as margens em telas grandes */
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            #hero h1 {
+                font-size: 4rem;
+            }
+            .navbar-collapse.show, .navbar-collapse.collapsing {
+                background-color: rgba(18, 18, 18, 0.98); /* Fundo sólido para legibilidade */
+                border-radius: 0 0 10px 10px;
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            #hero h1 {
+                font-size: calc(2.2rem + 4vw); /* Fonte responsiva para melhor ajuste */
+                line-height: 1.2;
+            }
+            #hero p {
+                font-size: 1.1rem;
+            }
+            .section-title {
+                font-size: 2.8rem;
+            }
+            footer {
+                padding-top: 40px;
+                text-align: center;
+            }
+            footer .g-5 {
+                --bs-gutter-y: 2.5rem;
+            }
+            footer .text-md-start {
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#hero">
+                <img src="logo.avif" alt="Auto Mecânica Minas Diesel Logo" style="height: 50px; width: auto; margin-right: 10px;" loading="eager">
+                <span class="h4 mb-0 text-white">Minas Diesel</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#marcas">Marcas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#avaliacoes">Avaliações</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item ms-lg-3 d-none d-lg-block">
+                        <a href="https://wa.me/5566996913995?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="btn btn-cta" style="font-size: 1.2rem; padding: 5px 20px;">
+                            <i class="fab fa-whatsapp"></i> Orçamento
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h1>SEU PESADO NÃO PODE PARAR.<br>A <span class="highlight">SOLUÇÃO</span> ESTÁ AQUI.</h1>
+                    <p class="lead my-4">Mecânica diesel de alta performance para caminhões e máquinas agrícolas. Atendimento especializado na BR-163, em Nova Santa Helena.</p>
+                    <a href="https://wa.me/5566996913995?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="btn btn-cta btn-lg">
+                        <i class="fab fa-whatsapp me-2"></i> ORÇAMENTO RÁPIDO
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Serviços Section -->
+        <section id="servicos" class="section bg-dark">
+            <div class="container">
+                <h2 class="section-title">NOSSOS <span class="highlight">SERVIÇOS</span></h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <img src="motor.avif" class="img-fluid" alt="Serviço de Motor" width="600" height="400" loading="lazy">
+                            <h3>Motor</h3>
+                            <p>Diagnóstico completo, retífica e reparo de motores diesel. Garantimos a potência e a durabilidade que seu veículo precisa para rodar tranquilo.</p>
+                            <a href="https://wa.me/5566996913995?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Motor." target="_blank" class="btn btn-cta mt-3"><i class="fab fa-whatsapp me-2"></i>Pedir Orçamento</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <img src="cambio.avif" class="img-fluid" alt="Serviço de Câmbio" width="600" height="400" loading="lazy">
+                            <h3>Câmbio</h3>
+                            <p>Especialistas em manutenção e conserto de caixas de câmbio manuais e automatizadas. Serviço preciso para uma troca de marchas suave e segura.</p>
+                             <a href="https://wa.me/5566996913995?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Câmbio." target="_blank" class="btn btn-cta mt-3"><i class="fab fa-whatsapp me-2"></i>Pedir Orçamento</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <img src="diferencial.avif" class="img-fluid" alt="Serviço de Diferencial" width="600" height="400" loading="lazy">
+                            <h3>Diferencial</h3>
+                            <p>Revisão e reparo de diferenciais para linha pesada e agrícola. Asseguramos a tração e a estabilidade do seu veículo em qualquer terreno.</p>
+                             <a href="https://wa.me/5566996913995?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20Diferencial." target="_blank" class="btn btn-cta mt-3"><i class="fab fa-whatsapp me-2"></i>Pedir Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marcas Section -->
+        <section id="marcas" class="section">
+            <div class="container">
+                <h2 class="section-title">Marcas que <span class="highlight">Trabalhamos</span></h2>
+                <div class="swiper brandsSwiper">
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide"><img src="Logo-Volvo.png.webp" alt="Volvo" loading="lazy"></div>
+                        <div class="swiper-slide"><img src="Logo-Iveco.png.webp" alt="Iveco" loading="lazy"></div>
+                        <div class="swiper-slide"><img src="Logo-Volkswagen.png.webp" alt="Volkswagen" loading="lazy"></div>
+                        <div class="swiper-slide"><img src="Logo-Ford.png.webp" alt="Ford" loading="lazy"></div>
+                        <div class="swiper-slide"><img src="Logo-Mercedes-Benz.png.webp" alt="Mercedes-Benz" loading="lazy"></div>
+                        <div class="swiper-slide"><img src="Logo-Scania.png.webp" alt="Scania" loading="lazy"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Avaliações Section -->
+        <section id="avaliacoes" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Avaliações <span class="highlight">Reais</span> de Clientes!</h2>
+                    <a href="https://g.co/kgs/ReYAVzE" target="_blank" class="btn btn-outline-light">
+                        Ver todas no Google <i class="fab fa-google ms-2"></i>
+                    </a>
+                </div>
+                
+                <div class="swiper reviewsSwiper">
+                    <div class="swiper-wrapper pb-5">
+                        <div class="swiper-slide h-auto">
+                            <div class="review-card">
+                                <p class="name mb-1">Gean Aparecido</p>
+                                <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="review-text">"Bom de mas. Mecânicos de qualidade"</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <div class="review-card">
+                                <p class="name mb-1">allyson rodrigo deo</p>
+                                <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="review-text">"Ficamos felizes em saber que você ficou satisfeito com nosso atendimento. Sempre que precisar, a equipe da Minas Disel estará à disposição."</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                           <div class="review-card">
+                                <p class="name mb-1">Deusalino Pereira da silva</p>
+                                <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="review-text">"Sua confiança nos motiva a seguir com dedicação e qualidade nos serviços. A equipe da Minas Disel está sempre à disposição!"</p>
+                            </div>
+                        </div>
+                         <div class="swiper-slide h-auto">
+                           <div class="review-card">
+                                <p class="name mb-1">mauro Mauro</p>
+                                <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="review-text">"Sua confiança é muito importante para nós. Sempre que precisar, a equipe da Minas Disel estará pronta para te atender com qualidade e responsabilidade!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div class="container">
+            <div class="row g-5 text-center text-md-start">
+                <div class="col-lg-5 col-md-12">
+                    <img src="logo.avif" alt="Logo" class="mb-3" style="height: 73px; width: auto;" loading="lazy">
+                    <p>Auto Mecânica Minas Diesel<br>CNPJ: 15.058.294/0001-80</p>
+                    <p>A sua parada obrigatória na BR-163 para serviços de mecânica diesel com agilidade e confiança.</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fab fa-whatsapp fa-fw me-2"></i> <a href="https://wa.me/5566996913995" target="_blank">(66) 99691-3995</a></li>
+                        <li class="mb-2"><i class="fas fa-envelope fa-fw me-2"></i> <a href="mailto:deusalinopereiradasilva567@gmail.com">deusalinopereiradasilva567@gmail.com</a></li>
+                        <li class="mb-2"><i class="fab fa-instagram fa-fw me-2"></i> <a href="https://www.instagram.com/minasdieselautomecanica" target="_blank">@minasdieselautomecanica</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Endereço</h4>
+                    <p>
+                        <a href="https://g.co/kgs/ReYAVzE" target="_blank">
+                            BR-163, 425<br>
+                            Nova Santa Helena - MT<br>
+                            78548-000
+                        </a>
+                    </p>
+                </div>
+            </div>
+             <div class="row mt-4">
+                <div class="col-12">
+                     <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.448643790943!2d-55.192512925786325!3d-10.853441120829968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9307956cff3098c5%3A0x217152812beea283!2sAuto%20Mec%C3%A2nica%20Minas%20Diesel-%20Nova%20Santa%20Helena-MT!5e0!3m2!1spt-BR!2sbr!4v1753396589297!5m2!1spt-BR!2sbr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                     </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p class="mb-0 small">&copy; <span id="current-year"></span> Auto Mecânica Minas Diesel. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5566996913995?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20orçamento." class="whatsapp-float d-flex align-items-center justify-content-center" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // Auto-close mobile menu on link click
+            const navLinks = document.querySelectorAll('.nav-link');
+            const menuToggle = document.getElementById('navbarNav');
+            if (menuToggle) {
+                const bsCollapse = new bootstrap.Collapse(menuToggle, {
+                  toggle: false
+                });
+                navLinks.forEach((l) => {
+                    l.addEventListener('click', () => {
+                        if (menuToggle.classList.contains('show')) {
+                            bsCollapse.toggle();
+                        }
+                    });
+                });
+            }
+
+            // Initialize Swipers
+            if (typeof Swiper !== 'undefined') {
+                var reviewsSwiper = new Swiper(".reviewsSwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        768: { slidesPerView: 2 },
+                        992: { slidesPerView: 3 },
+                    },
+                });
+
+                var brandsSwiper = new Swiper(".brandsSwiper", {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                    loop: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    breakpoints: {
+                        576: { slidesPerView: 3 },
+                        768: { slidesPerView: 4 },
+                        992: { slidesPerView: 5 },
+                        1200: { slidesPerView: 6 },
+                    },
+                });
+            }
+        });
+    </script>
+</body>
+</html>
