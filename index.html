@@ -237,7 +237,6 @@
             position: relative;
             background-color: transparent;
             z-index: 1;
-            padding-top: 150px;
         }
         #servicos::before {
             content: '';
@@ -478,41 +477,6 @@
         }
         
         /* ========================================
-        FAIXA DE TEXTO EM MOVIMENTO
-        ========================================
-        */
-        .banner-container {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: -60px;
-            z-index: 10;
-            overflow: hidden; /* <-- CORREÇÃO APLICADA AQUI */
-        }
-        .moving-text-banner-wrapper {
-            transform: rotate(-2deg);
-        }
-        .moving-text-banner {
-            background-color: var(--light-color);
-            padding: 0.5rem 0;
-            white-space: nowrap;
-            color: var(--dark-color);
-            text-align: center;
-            overflow: hidden;
-        }
-        .moving-text-banner .moving-text-content {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            display: inline-block;
-            padding: 0 2rem; /* Adiciona margem interna */
-        }
-        .moving-text-banner .moving-text-content span {
-            color: var(--primary-color);
-            margin: 0 1.5rem;
-        }
-
-        /* ========================================
         AJUSTES RESPONSIVOS
         ========================================
         */
@@ -539,15 +503,6 @@
             #hero h1 { font-size: calc(2.5rem + 5vw); line-height: 1.2; }
             #hero p { font-size: 1.2rem; }
             .section-title { font-size: 3rem; }
-            .banner-container {
-                top: -40px;
-            }
-            .moving-text-banner-wrapper {
-                transform: rotate(0deg); /* Remove a inclinação no mobile */
-            }
-            .moving-text-banner .moving-text-content {
-                font-size: 1.2rem; /* Diminui o texto no mobile */
-            }
         }
     </style>
 </head>
@@ -633,15 +588,6 @@
         </section>
 
         <section id="servicos" class="section">
-            <div class="banner-container">
-                <div class="moving-text-banner-wrapper">
-                    <div class="moving-text-banner">
-                        <div class="moving-text-content">
-                            A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span> A MELHOR OFICINA DIESEL DA REGIÃO <span>•</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="container">
                 <h2 class="section-title">NOSSOS <span class="highlight">SERVIÇOS</span></h2>
                 <div class="row g-4 justify-content-center">
