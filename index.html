@@ -507,13 +507,14 @@
             .section-title { font-size: 3rem; }
             
             /* CORREÇÕES PARA O RODAPÉ EM MOBILE */
-            .ratio-16x9 {
-                height: 250px !important;
-            }
-            
             .reviewsSwiper {
                 padding-bottom: 0 !important;
-                margin-bottom: -30px;
+                margin-bottom: 30px; /* Espaçamento positivo para evitar sobreposição */
+            }
+            
+            /* Altura mais flexível para o mapa */
+            .ratio-16x9 {
+                max-height: 250px;
             }
         }
     </style>
