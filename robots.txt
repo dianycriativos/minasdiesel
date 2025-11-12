@@ -1,21 +1,27 @@
+# Robots.txt para mecanicaminasdiesel.com.br
+# Última atualização: 12 de novembro de 2025
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /tmp/
+Disallow: /?*
 
-Sitemap
+# Sitemap - URL CORRIGIDA (SEM REDIRECIONAMENTO DO GMAIL)
+Sitemap: https://mecanicaminasdiesel.com.br/sitemap.xml
 
-Sitemap: https://www.google.com/url?sa=E&source=gmail&q=https://mecanicaminasdiesel.com.br/sitemap.xml
-
-Permitir rastreamento rápido do Google
-
+# Permitir rastreamento rápido do Google
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
-Permitir rastreamento do Bing
-
+# Permitir rastreamento do Bing
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
+
+# Bloquear bots de spam
+User-agent: MJ12bot
+Disallow: /
+User-agent: AhrefsBot
+Disallow: /
